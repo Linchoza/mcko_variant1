@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>МЦКО. Вариант 1 (6 класс)</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { font-family: Arial,sans-serif; background: #f6f7fb; padding: 30px;}
+    h1 { color:#2c3777; }
+    .question { background:#fff; border-radius:10px; margin:17px 0; padding:15px 23px; box-shadow:0 2px 8px #d1d8f0; }
+    .qnum { font-size:18px; color:#557;}
+    .answer { font-size:16px; margin:7px 0; }
+    .fracinput {display:inline-block;}
+    .fracinput input { width:35px; font-size:18px; text-align:center; border-radius:7px; border:1.5px solid #ccd; margin:1px;}
+    .fracline { display:inline-block; height:2px; background:#345; width:35px; margin-bottom:2px; vertical-align:middle;}
+    .mixinput input { width:30px; }
+    .inputans { width: 90px; font-size:17px; padding:4px 6px; border-radius:6px; border:1.5px solid #ccd;}
+    .submit-btn { background: #3763d6; color:#fff; border:none; padding:11px 28px; border-radius:7px; font-size:17px; cursor:pointer; margin-top:20px; }
+    .submit-btn:hover { background:#28459a; }
+    .result { font-size:20px; margin:23px 0 10px 0; }
+    .explain { background: #f6f7fb; padding: 9px 18px; border-left: 5px solid #5c7bd9; border-radius: 0 10px 10px 0; margin-top: 5px; font-size:15px;}
+    .right { color:#19985c; font-weight:bold;}
+    .wrong { color:#b63636; font-weight:bold;}
+  </style>
+</head>
+<body>
+<h1>МЦКО. Вариант 1 (6 класс)</h1>
+<form id="quiz">
+
+  <!-- 1 -->
+  <div class="question">
+    <span class="qnum">1.</span> Вычислите: <b>–3 ∙ (21 + 34)</b>
+    <div class="answer">
+      Ответ: <input type="text" class="inputans" id="q1" autocomplete="off">
+    </div>
+    <div class="explain" id="e1" style="display:none"></div>
+  </div>
+
+  <!-- 2.1 -->
+  <div class="question">
+    <span class="qnum">2.1.</span> Вычислите: <span>\(\left(\dfrac{7}{4} - \dfrac{5}{6}\right) \cdot \dfrac{3}{5}\)</span>
+    <div class="answer">
+      <span class="fracinput">
+        <input type="text" id="q21n" maxlength="3" autocomplete="off" placeholder="числ."> <br>
+        <span class="fracline"></span> <br>
+        <input type="text" id="q21d" maxlength="3" autocomplete="off" placeholder="знам.">
+      </span>
+      <span style="margin-left:12px;color:#888;">или смешанная</span>
+      <span class="mixinput">
+        <input type="text" id="q21w" maxlength="2" style="margin-left:8px;" autocomplete="off" placeholder="цел."> 
+        <input type="text" id="q21wn" maxlength="2" autocomplete="off" placeholder="числ."> /
+        <input type="text" id="q21wd" maxlength="2" autocomplete="off" placeholder="знам.">
+      </span>
+    </div>
+    <div class="explain" id="e21" style="display:none"></div>
+  </div>
+
+  <!-- 2.2 -->
+  <div class="question">
+    <span class="qnum">2.2.</span> Вычислите: 2,37 + 0,25 × (–4,8)
+    <div class="answer">
+      Ответ: <input type="text" class="inputans" id="q22" autocomplete="off">
+    </div>
+    <div class="explain" id="e22" style="display:none"></div>
+  </div>
+
+  <!-- 3 -->
+  <div class="question">
+    <span class="qnum">3.</span> Найдите значение выражения <b>–4|y – 3|</b> при y = –2.
+    <div class="answer">
+      Ответ: <input type="text" class="inputans" id="q3" autocomplete="off">
+    </div>
+    <div class="explain" id="e3" style="display:none"></div>
+  </div>
+
+  <!-- 4 -->
+  <div class="question">
+    <span class="qnum">4.</span> Найдите x из равенства <b>7x – x = 13,2 – 2,4</b>
+    <div class="answer">
+      Ответ: <input type="text" class="inputans" id="q4" autocomplete="off">
+    </div>
+    <div class="explain" id="e4" style="display:none"></div>
+  </div>
+
+  <!-- 5.1 -->
+  <div class="question">
+    <span class="qnum">5.1.</span> Теплоход прошёл по течению реки 84 км за 6 ч. Сколько часов понадобится на обратный путь, если скорость течения реки равна 2 км/ч?
+    <div class="answer">
+      Ответ: <input type="text" class="inputans" id="q51" autocomplete="off">
+    </div>
+    <div class="explain" id="e51" style="display:none"></div>
+  </div>
+
+  <!-- 5.2 -->
+  <div class="question">
+    <span class="qnum">5.2.</span> Один насос может наполнить бассейн за 36 часов, а другой — за 12 часов. За сколько часов наполнят бассейн эти два насоса, работая вместе?
+    <div class="answer">
+      Ответ: <input type="text" class="inputans" id="q52" autocomplete="off">
+    </div>
+    <div class="explain" id="e52" style="display:none"></div>
+  </div>
+
+  <!-- 6 -->
+  <div class="question">
+    <span class="qnum">6.</span> Вычислите: <span>\(\dfrac{16}{3} : \left(\dfrac{7}{5} - \dfrac{4}{3}\right) + 2 \cdot \dfrac{11}{7}\)</span>
+    <div class="answer">
+      <span class="fracinput">
+        <input type="text" id="q6n" maxlength="3" autocomplete="off" placeholder="числ."> <br>
+        <span class="fracline"></span> <br>
+        <input type="text" id="q6d" maxlength="3" autocomplete="off" placeholder="знам.">
+      </span>
+      <span style="margin-left:12px;color:#888;">или смешанная</span>
+      <span class="mixinput">
+        <input type="text" id="q6w" maxlength="2" style="margin-left:8px;" autocomplete="off" placeholder="цел."> 
+        <input type="text" id="q6wn" maxlength="2" autocomplete="off" placeholder="числ."> /
+        <input type="text" id="q6wd" maxlength="2" autocomplete="off" placeholder="знам.">
+      </span>
+    </div>
+    <div class="explain" id="e6" style="display:none"></div>
+  </div>
+
+  <!-- 7 -->
+  <div class="question">
+    <span class="qnum">7.</span> В многоквартирном доме всего 252 квартиры. Во всех подъездах одинаковое количество квартир. Сколько подъездов в доме, если в каждом из них больше 60, но меньше 70 квартир?
+    <div class="answer">
+      Ответ: <input type="text" class="inputans" id="q7" autocomplete="off">
+    </div>
+    <div class="explain" id="e7" style="display:none"></div>
+  </div>
+
+  <!-- 8 -->
+  <div class="question">
+    <span class="qnum">8.</span> В трёх ящиках лежат яблоки. В первом ящике яблок в 2 раза меньше, чем в двух остальных вместе, во втором — 60% количества яблок в третьем ящике, а в третьем ящике лежит 90 яблок. Сколько всего яблок в трёх ящиках?
+    <div class="answer">
+      Ответ: <input type="text" class="inputans" id="q8" autocomplete="off">
+    </div>
+    <div class="explain" id="e8" style="display:none"></div>
+  </div>
+
+  <!-- 9 -->
+  <div class="question">
+    <span class="qnum">9.</span> В задуманном двузначном числе цифра десятков в 3 раза меньше цифры единиц. Если поменять их местами, число увеличится на 54. Найдите задуманное число.
+    <div class="answer">
+      Ответ: <input type="text" class="inputans" id="q9" autocomplete="off">
+    </div>
+    <div class="explain" id="e9" style="display:none"></div>
+  </div>
+
+  <button type="button" class="submit-btn" onclick="checkTest()">Проверить</button>
+</form>
+<div class="result" id="result"></div>
+<script>
+function fracEq(n1,d1,n2,d2) {
+  if (!n1||!d1||!n2||!d2) return false;
+  return Number(n1)*Number(d2) === Number(n2)*Number(d1);
+}
+function mixToFrac(w,n,d) {
+  if(!n || !d) return [Number(w)||0,1];
+  return [Number(w)*Number(d)+Number(n), Number(d)];
+}
+function checkTest() {
+  let score = 0;
+  // 1
+  let v1 = document.getElementById("q1").value.replace(",",".");
+  if (Math.abs(Number(v1)+165)<1e-2) {score++;document.getElementById("e1").innerHTML = "<span class='right'>Верно!</span> –3×(21+34)=–165"; }
+  else {document.getElementById("e1").innerHTML = "<span class='wrong'>Ошибка.</span> Правильный ответ: –165"; }
+  document.getElementById("e1").style.display="block";
+  // 2.1: 3/10
+  let n = document.getElementById("q21n").value;
+  let d = document.getElementById("q21d").value;
+  let wn = document.getElementById("q21wn").value;
+  let wd = document.getElementById("q21wd").value;
+  let w = document.getElementById("q21w").value;
+  let ok = false;
+  if (fracEq(n,d,3,10)) ok = true;
+  let [nm,dm] = mixToFrac(w,wn,wd);
+  if (fracEq(nm,dm,3,10)) ok = true;
+  if (ok) {score++;document.getElementById("e21").innerHTML = "<span class='right'>Верно!</span> \\(\\frac{3}{10}\\)"; }
+  else    {document.getElementById("e21").innerHTML = "<span class='wrong'>Ошибка.</span> Правильный ответ: \\(\\frac{3}{10}\\)"; }
+  document.getElementById("e21").style.display="block";
+  // 2.2
+  let v22 = document.getElementById("q22").value.replace(",",".");
+  if (Math.abs(parseFloat(v22)-1.17)<0.02) {score++;document.getElementById("e22").innerHTML = "<span class='right'>Верно!</span> 1{,}17";}
+  else {document.getElementById("e22").innerHTML = "<span class='wrong'>Ошибка.</span> Правильный ответ: 1{,}17";}
+  document.getElementById("e22").style.display="block";
+  // 3
+  let v3 = document.getElementById("q3").value.replace(",",".");
+  if (Math.abs(Number(v3)+20)<1e-2) {score++;document.getElementById("e3").innerHTML = "<span class='right'>Верно!</span> –4×|–2–3|=–4×5=–20";}
+  else {document.getElementById("e3").innerHTML = "<span class='wrong'>Ошибка.</span> Правильный ответ: –20";}
+  document.getElementById("e3").style.display="block";
+  // 4
+  let v4 = document.getElementById("q4").value.replace(",",".");
+  if (Math.abs(Number(v4)-1.8)<1e-2) {score++;document.getElementById("e4").innerHTML = "<span class='right'>Верно!</span> x=1,8";}
+  else {document.getElementById("e4").innerHTML = "<span class='wrong'>Ошибка.</span> Правильный ответ: 1,8";}
+  document.getElementById("e4").style.display="block";
+  // 5.1
+  let v51 = document.getElementById("q51").value.replace(",",".");
+  if (Math.abs(Number(v51)-7)<1e-2) {score++;document.getElementById("e51").innerHTML = "<span class='right'>Верно!</span> 7";}
+  else {document.getElementById("e51").innerHTML = "<span class='wrong'>Ошибка.</span> Правильный ответ: 7";}
+  document.getElementById("e51").style.display="block";
+  // 5.2
+  let v52 = document.getElementById("q52").value.replace(",",".");
+  if (Math.abs(Number(v52)-9)<1e-2) {score++;document.getElementById("e52").innerHTML = "<span class='right'>Верно!</span> 9";}
+  else {document.getElementById("e52").innerHTML = "<span class='wrong'>Ошибка.</span> Правильный ответ: 9";}
+  document.getElementById("e52").style.display="block";
+  // 6: 32/3 (или 10 2/3)
+  n = document.getElementById("q6n").value;
+  d = document.getElementById("q6d").value;
+  wn = document.getElementById("q6wn").value;
+  wd = document.getElementById("q6wd").value;
+  w = document.getElementById("q6w").value;
+  ok = false;
+  if (fracEq(n,d,32,3)) ok = true;
+  [nm,dm] = mixToFrac(w,wn,wd);
+  if (fracEq(nm,dm,32,3)) ok = true;
+  if (ok) {score++;document.getElementById("e6").innerHTML = "<span class='right'>Верно!</span> \\(\\frac{32}{3}\\) или \\(10\\frac{2}{3}\\)"; }
+  else    {document.getElementById("e6").innerHTML = "<span class='wrong'>Ошибка.</span> Правильный ответ: \\(\\frac{32}{3}\\) или \\(10\\frac{2}{3}\\)"; }
+  document.getElementById("e6").style.display="block";
+  // 7
+  let v7 = document.getElementById("q7").value.replace(",",".");
+  if (parseInt(v7)==4) {score++;document.getElementById("e7").innerHTML = "<span class='right'>Верно!</span> 4";}
+  else {document.getElementById("e7").innerHTML = "<span class='wrong'>Ошибка.</span> Правильный ответ: 4";}
+  document.getElementById("e7").style.display="block";
+  // 8
+  let v8 = document.getElementById("q8").value.replace(",",".");
+  if (parseInt(v8)==216) {score++;document.getElementById("e8").innerHTML = "<span class='right'>Верно!</span> 216";}
+  else {document.getElementById("e8").innerHTML = "<span class='wrong'>Ошибка.</span> Правильный ответ: 216";}
+  document.getElementById("e8").style.display="block";
+  // 9
+  let v9 = document.getElementById("q9").value.replace(",",".");
+  if (parseInt(v9)==39) {score++;document.getElementById("e9").innerHTML = "<span class='right'>Верно!</span> 39";}
+  else {document.getElementById("e9").innerHTML = "<span class='wrong'>Ошибка.</span> Правильный ответ: 39";}
+  document.getElementById("e9").style.display="block";
+
+  document.getElementById('result').innerHTML = "Ваш результат: <b>"+score+" из 10</b>";
+  if(window.MathJax){MathJax.typesetPromise();}
+}
+window.onload = function() {
+  if(window.MathJax){MathJax.typeset();}
+  // автосохранение ответов:
+  let fields = ["q1","q21n","q21d","q21w","q21wn","q21wd","q22","q3","q4","q51","q52","q6n","q6d","q6w","q6wn","q6wd","q7","q8","q9"];
+  if(localStorage.getItem("mcko_v1_ans")){
+    let saved = JSON.parse(localStorage.getItem("mcko_v1_ans"));
+    for(let i=0;i<fields.length;i++) if(saved[fields[i]]) document.getElementById(fields[i]).value=saved[fields[i]];
+  }
+  for(let i=0;i<fields.length;i++) {
+    document.getElementById(fields[i]).oninput = function() {
+      let obj = {};
+      for(let j=0;j<fields.length;j++) obj[fields[j]] = document.getElementById(fields[j]).value||"";
+      localStorage.setItem("mcko_v1_ans",JSON.stringify(obj));
+    };
+  }
+}
+</script>
+</body>
+</html>
